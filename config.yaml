@@ -1,0 +1,25 @@
+# Football Analysis System Configuration
+
+# Input/Output Paths
+input_video: "input_videos/video.mp4"
+output_video: "output_videos/output.avi"
+model_path: "models/best.pt"
+stub_path: "tracker_stubs/player_detection.pkl"
+
+# Tracker Settings
+use_stub: false
+confidence_threshold: 0.1
+batch_size: 20
+
+# Visualization Settings
+player_color: [0, 0, 255]  # Red
+referee_color: [0, 255, 255]  # Yellow
+ball_color: [0, 255, 0]  # Green
+
+# Logging
+log_level: "INFO"
+log_file: "logs/football_analysis.log"
+
+# Fun Settings
+favorite_team: "Your Favorite Team"
+easter_egg_message: "Go Team!" 
