@@ -8,6 +8,35 @@ A minimal, robust football match video analysis system using YOLOv11l for detect
 - 🔧 Configurable favorite team overlay (see `config.yaml`)
 - 🖥️ Simple CLI interface
 
+
+### 🛠️ Challenges
+
+While developing this system, I faced and addressed several key challenges:
+
+- **Accurate Object Detection:**  
+  Differentiating between players, referees, and the ball required fine-tuning YOLOv11l anchors and confidence thresholds to minimize false positives and missed detections.
+
+- **Small Object (Ball) Tracking:**  
+  The ball’s small size and rapid motion led to frequent lost tracks. Integrating ByteTrack with custom motion models and increasing frame-rate interpolation helped maintain continuity.
+
+- **Team Classification:**  
+  Assigning detected players to teams based on jersey colors was complicated by varying lighting and resolution. Implementing color-space normalization and dynamic clustering improved classification accuracy.
+
+- **Annotation Overlay Synchronization:**  
+  Ensuring labels, bounding boxes, and team overlays stayed correctly aligned during fast camera pans required optimized buffer handling and GPU-accelerated rendering in OpenCV.
+
+- **Performance Optimization:**  
+  Processing high-resolution videos in real time demanded balancing model precision with inference speed. Strategies included batching frames, model quantization, and multi-threaded I/O pipelines.
+
+- **Modular CLI Design:**  
+  Building a user-friendly CLI that could handle different modes (detection-only, detection + tracking) led to designing a clear command syntax and input validation routines.
+
+- **Configurable Workflow:**  
+  Abstracting configuration for favorite team overlay and model selection into `config.yaml` meant designing a flexible parser and error-handling when user parameters were missing or invalid.
+
+These challenges shaped the system’s design and performance, laying a solid foundation for future extensions like speed analysis and tactical heatmaps.
+
+
 ## 🚀 Potential Extensions
 
 - Frame-by-frame player speed estimation  
