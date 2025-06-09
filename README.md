@@ -1,6 +1,7 @@
 # Football Analysis System
 
 A minimal, robust football match video analysis system using YOLOv11l for detection and ByteTrack for tracking. It processes match footage to detect and track players, referees, and the ball, and outputs annotated video files.
+heres a quick Youtube link for the kind of output u can expect https://youtu.be/IQ8Muetic8Q.
 
 ## Features
 - ⚽ Player, referee, and ball detection via YOLOv11l
@@ -54,7 +55,7 @@ These challenges shaped the system’s design and performance, laying a solid fo
 
 ## Usage
     python main.py
-Follow prompts to select your input video (in `input_videos/`) and YOLO model (in `models/`). Outputs are saved to `output_videos/`.
+Follow prompts to select your input video (in `input_videos/`) and YOLO model (in `models/`). Outputs are saved to `output_videos/`. I added that I trained for you in there.
 
 ## Project Structure
     .
